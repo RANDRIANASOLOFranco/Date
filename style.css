@@ -1,0 +1,59 @@
+body{
+    background-color : rgb(159, 190, 231) !important;
+}
+.zone1{
+    text-align: center;
+    margin-top: 70px;
+    border: 3px solid black;
+    border-radius: 6px;
+    color: green;
+    transition: 4s;
+    backface-visibility: hidden; /* Permet d'éviter de voir le bloc de dos */
+
+}
+.quest{
+    text-align: center;
+    font-size: 50px;
+    font-weight: bold;
+    color: rgb(43, 9, 138);
+}
+.zone1:hover{
+    border: 3px solid green;
+    color: black;
+}
+.sary{
+    text-align: center;
+    margin-top: 60px;
+}
+.modif{
+    width: 50px;
+}
+footer{
+    margin-top: 12%;
+    text-align: center;
+}
+
+#devant
+{
+    z-index: 100;
+}
+
+#derriere
+{
+    z-index: 50;
+    transform: rotateY(-180deg); /* Celui-ci est retourné par défaut */
+}
+
+#devant:hover
+{
+    transform: rotateY(360deg); /* On passe de 0 à 360° : tour complet */
+}
+
+/*
+Astuce :
+Lorsqu'on survole le bloc devant, on applique une rotation au bloc derriere
+*/
+#devant:hover + #derriere
+{
+    transform: rotateY(180deg);  /* On passe de -180° à 180° : tour complet */
+}
